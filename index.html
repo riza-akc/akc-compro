@@ -1,73 +1,171 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Under Construction</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artha Kencana Cendekia</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    :root{
-      --bg: #5a1530; /* sesuai permintaan */
-      --glass: rgba(255,255,255,0.08);
-      --glass-2: rgba(255,255,255,0.06);
-      --accent: rgba(255,255,255,0.95);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
-    body{
-      background:var(--bg);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--accent);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:2rem;
-    }
-
-    .card{
-      width:100%;max-width:880px;padding:48px;border-radius:20px;
-      background:linear-gradient(180deg, rgba(161, 114, 114, 0.04), rgba(255,255,255,0.02));
-      box-shadow:0 10px 30px rgba(0,0,0,0.25);
-      text-align:center;
-      backdrop-filter: blur(6px);
-    }
-
-    .icon-construct{ 
-        width: 256px; /* ubah sesuai kebutuhan */
-        height: auto;
-        margin: 0 auto 18px;
-        display: block;}
-    h1{margin:0;font-size:32px;letter-spacing:0.6px}
-    p.lead{margin:12px 0 24px;opacity:0.95}
-
-    .socials{display:flex;gap:14px;align-items:center;justify-content:center;margin-top:18px}
-    .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:var(--glass-2);text-decoration:none;color:var(--accent);transition:transform .18s ease, background .18s ease}
-    .socials a:hover{transform:translateY(-6px);background:rgba(255,255,255,0.09)}
-    .socials svg{width:20px;height:20px}
-
-    .mailto{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:14px}
-    .mailto a{color:var(--accent);text-decoration:none;font-weight:600;display:inline-flex;gap:8px;align-items:center;background:transparent;padding:8px 12px;border-radius:999px}
-    .mailto svg{width:18px;height:18px}
-
-    .small{margin-top:18px;font-size:12px;opacity:0.9}
-
-    @media (max-width:480px){
-      .card{padding:28px;border-radius:16px}
-      h1{font-size:24px}
-    }
-  </style>
 </head>
 <body>
-  <div class="card" role="main">
-    <!-- Construction SVG -->
-    <img src="images/logo-akc.png" alt="Logo" class="icon-construct">
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+  <img src="images/logo-akc-black.png" alt="Company Logo">
+</a>
 
-    <h1>Under Construction</h1>
-    <p class="lead">Kami sedang membangun sesuatu yang keren. Kembali sebentar lagi — terima kasih atas kesabaranmu!</p>
+     <nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#partners">Our Client</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact" >Contact</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Building Future Together</h2>
+      <p>We provide innovative solutions to help your business grow.</p>
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        We are a passionate team dedicated to delivering quality products and
+        services. Our goal is to help clients achieve success through innovation,
+        collaboration, and excellence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section gray">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Professional websites and web applications built for performance.</p>
+        </div>
+        <div class="card">
+          <h3>Branding</h3>
+          <p>Strong brand identity to make your business stand out.</p>
+        </div>
+        <div class="card">
+          <h3>Consulting</h3>
+          <p>Expert guidance to transform ideas into real impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Companies We Work With -->
+<section id="partners" class="section gray">
+  <div class="container">
+    <h2>Companies We Work With</h2>
+    <p>We’re proud to collaborate with leading brands and organizations around the world.</p>
+
+    <div class="partners-carousel">
+      <div class="logos-track">
+        <img src="https://via.placeholder.com/150x80?text=Google" alt="Google" />
+        <img src="https://via.placeholder.com/150x80?text=Microsoft" alt="Microsoft" />
+        <img src="https://via.placeholder.com/150x80?text=Amazon" alt="Amazon" />
+        <img src="https://via.placeholder.com/150x80?text=Tesla" alt="Tesla" />
+        <img src="https://via.placeholder.com/150x80?text=Coca-Cola" alt="Coca-Cola" />
+        <img src="https://via.placeholder.com/150x80?text=Spotify" alt="Spotify" />
+        <img src="https://via.placeholder.com/150x80?text=Netflix" alt="Netflix" />
+        <!-- Duplicate untuk efek loop -->
+        <img src="https://via.placeholder.com/150x80?text=Google" alt="Google" />
+        <img src="https://via.placeholder.com/150x80?text=Microsoft" alt="Microsoft" />
+        <img src="https://via.placeholder.com/150x80?text=Amazon" alt="Amazon" />
+        <img src="https://via.placeholder.com/150x80?text=Tesla" alt="Tesla" />
+        <img src="https://via.placeholder.com/150x80?text=Coca-Cola" alt="Coca-Cola" />
+        <img src="https://via.placeholder.com/150x80?text=Spotify" alt="Spotify" />
+        <img src="https://via.placeholder.com/150x80?text=Netflix" alt="Netflix" />
+      </div>
+    </div>
+  </div>
+</section>
 
 
+  <!-- Team -->
+  <section id="team" class="section">
+    <div class="container">
+      <h2>Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Team Member" />
+          <h3>John Doe</h3>
+          <p>CEO</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Team Member" />
+          <h3>Jane Smith</h3>
+          <p>CTO</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Team Member" />
+          <h3>Mike Johnson</h3>
+          <p>Lead Designer</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="socials" aria-label="Social links">
-     <a href="https://www.instagram.com/akcproductionid/" target="_blank"><i class="fab fa-instagram"></i></a>
-     <a href="https://www.instagram.com/flashgenius_/" target="_blank"><i class="fab fa-instagram"></i></a> 
+  <!-- Contact -->
+  <section id="contact" class="section gray">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="images/logo-akc-black.png" alt="AKC Production Logo" />
+    </div>
+
+    <p>
+      Blk. C7 No.4, Cikuya, Kec. Solear,<br />
+      Kabupaten Tangerang, Banten 15730
+    </p>
+
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <a href="#contact" class="footer-btn">Contact Us</a>
+  </div>
+</footer>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 YourCompany. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
