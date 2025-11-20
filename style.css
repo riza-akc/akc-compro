@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -32,9 +31,47 @@ html {
   --white: #fff;
 }
 
+
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 /* ==============================
-   BASE ELEMENTS
+   BASE TYPOGRAPHY
 ============================== */
+
+body {
+  font-family: 'General Sans';
+  color: #000;
+  line-height: 2.0;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'General Sans';
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+
+p, li, a, button, input, textarea {
+  font-family: 'General Sans';
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+
+/* ==============================
+   margin-bottom: var(--space-lg); 
+============================== */
+
 body {
   color: var(--text-dark);
   line-height: 1.6;
@@ -55,29 +92,13 @@ header {
   padding-block: var(--space-sm);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eee;
 }
 
 header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* ========================= */
-/* HEADER BASE STYLES */
-/* ========================= */
-header {
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,9 +106,15 @@ header {
   padding-inline: var(--container-padding);
 }
 
+/* ========================= */
+/* HEADER BASE STYLES */
+/* ========================= */
+
 .logo img {
-  height: 40px;
+  height: 48px;
   width: auto;
+
+  vertical-align: middle;
 }
 
 nav ul {
@@ -205,11 +232,7 @@ nav ul li a:hover {
   }
 }
 
-.logo img {
-  height: 50px;
-  width: auto;
-  vertical-align: middle;
-}
+
 
 nav ul {
   list-style: none;
@@ -247,20 +270,6 @@ nav a:hover {
   /* margin-left: var(--space-md); (BACKUP) */
 }
 
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--text-dark);
-  margin-bottom: var(--space-md);
-}
-
-.hero-content p {
-  color: var(--text-light);
-  font-size: 1.1rem;
-  margin-bottom: var(--space-md);
-  
-}
 
 .hero-image {
   display: flex;
@@ -271,10 +280,114 @@ nav a:hover {
 
 .hero-image img {
   aspect-ratio: 1/1;
-  height: 100%;
+  height: 720px;
   object-fit: cover;
   object-position: center;
 }
+
+/* ============================
+   ABOUT US SECTION (DESKTOP)
+============================ */
+.about {
+  padding-block: var(--space-xl);
+  background: #fff;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* teks kiri lebih lebar */
+  align-items: start;
+  gap: var(--space-lg);
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Process list (kanan) */
+.about-process {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.process-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.process-item .icon {
+  background: #a23366;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  min-width: 60px;
+  height: 60px;
+}
+
+.process-item h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.process-item p {
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+============================ */
+
+/* Tablet (2 kolom masih oke tapi lebih rapat) */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .about {
+    padding-block: var(--space-lg);
+  }
+
+  .about-container {
+    grid-template-columns: 1fr; /* Ubah jadi 1 kolom */
+    padding-inline: var(--space-md); /* Biar tidak mentok */
+  }
+
+  /* Process item styling */
+  .process-item {
+    align-items: center;
+  }
+
+  .process-item .icon {
+    min-width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+
+  .process-item h4 {
+    font-size: 1.05rem;
+  }
+
+  .process-item p {
+    font-size: 0.9rem;
+  }
+}
+
 
 /* ==============================
    SECTION LAYOUT
@@ -510,16 +623,6 @@ Recent Work
   background-color: #fff;
 }
 
-.recent-work h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: var(--space-xs);
-}
-
-.recent-work .subtitle {
-  color: #666;
-  margin-bottom: var(--space-lg);
-}
 
 .work-grid {
   display: grid;
@@ -585,4 +688,67 @@ Recent Work
 
 .btn-primary:hover {
   background-color: #8a2a55;
+}
+
+
+/* ===============================
+   LIGHTBOX IMAGE VIEWER
+=============================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Lightbox active */
+.lightbox.active {
+  display: flex;
+}
+
+/* Image in lightbox */
+.lightbox-image {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Close button */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+.lightbox .close:hover {
+  color: #a23366;
 }
