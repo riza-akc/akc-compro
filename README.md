@@ -1,2 +1,2 @@
 git commit -m(update stage, -m itu message)
-git push (upload ke git)
+git push origin main (upload ke git)
