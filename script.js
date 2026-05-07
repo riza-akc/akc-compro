@@ -66,3 +66,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+  // ================= Hero ganti ganti =================
+
+
+const hero = document.querySelector('.hero');
+
+const images = [
+  'images/hero1.jpg',
+  'images/hero2.jpg',
+  'images/hero3.jpg'
+];
+
+let index = 0;
+
+function changeHeroBg() {
+  index = (index + 1) % images.length;
+  hero.style.backgroundImage = `url(${images[index]})`;
+}
+
+// initial load
+hero.style.backgroundImage = `url(${images[0]})`;
+
+// ganti tiap 7 detik
+setInterval(changeHeroBg, 7000);

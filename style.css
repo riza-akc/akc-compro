@@ -271,9 +271,40 @@ nav a:hover {
 .hero {
   position: relative;
   min-height: 100vh;
-  background: url("images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1);
+  transition: background-image 0.8s ease-in-out;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+
+/* =======================
+Fade Smooth (crossfade) 
+========================*/
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+  transform: scale(1.05);
 }
 
 /* Overlay gelap + gradient */
@@ -299,6 +330,7 @@ nav a:hover {
 
 /* Text content */
 .hero-content {
+  position: relative;
   max-width: 600px;
   color: #fff;
   padding-left: var(--container-padding);
